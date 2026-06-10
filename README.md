@@ -24,17 +24,18 @@
 
 ## 🚀 Demo
 
-Visit the live application: [FitTrack Pro Demo](https://fittrackpro.herokuapp.com) *(deployment link)*
+Visit the live application: [FitTrack Pro Demo](https://fittrackpro.herokuapp.com) _(deployment link)_
 
 ### Screenshots
 
-| Home Page | Dashboard | Progress Tracking |
-|-----------|-----------|-------------------|
+| Home Page                            | Dashboard                                      | Progress Tracking                            |
+| ------------------------------------ | ---------------------------------------------- | -------------------------------------------- |
 | ![Home](./docs/screenshots/home.png) | ![Dashboard](./docs/screenshots/dashboard.png) | ![Progress](./docs/screenshots/progress.png) |
 
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - **HTML5** - Semantic markup with accessibility features
 - **CSS3** - Modern CSS with custom properties, Grid, and Flexbox
 - **JavaScript (ES6+)** - Vanilla JavaScript with modern features
@@ -42,12 +43,14 @@ Visit the live application: [FitTrack Pro Demo](https://fittrackpro.herokuapp.co
 - **Chart.js** - Interactive progress charts
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
 - **Mongoose** - MongoDB object modeling
 
 ### Development
+
 - **Nodemon** - Development server with auto-restart
 - **ESLint** - Code linting and formatting
 - **Git** - Version control
@@ -86,13 +89,14 @@ npm run setup
 
 1. **Install MongoDB** following the [official guide](https://docs.mongodb.com/manual/installation/)
 2. **Start MongoDB service**:
+
    ```bash
    # Windows
    net start MongoDB
-   
+
    # macOS (with Homebrew)
    brew services start mongodb/brew/mongodb-community
-   
+
    # Linux (Ubuntu)
    sudo systemctl start mongod
    ```
@@ -104,9 +108,9 @@ npm run setup
 3. Get your connection string
 4. Update the connection string in `server/app.js`:
    ```javascript
-   mongoose.connect('your-mongodb-atlas-connection-string', {
+   mongoose.connect("your-mongodb-atlas-connection-string", {
      useNewUrlParser: true,
-     useUnifiedTopology: true
+     useUnifiedTopology: true,
    });
    ```
 
@@ -137,6 +141,7 @@ npm start
 ```
 
 The application will be available at:
+
 - **Frontend**: http://localhost:5000
 - **API**: http://localhost:5000/api
 
@@ -153,12 +158,14 @@ The application will be available at:
 ### Quick Start with Docker
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/yourusername/fittrack-pro.git
    cd fittrack-pro
    ```
 
 2. **Start the application**:
+
    ```bash
    npm run compose:up
    ```
@@ -197,17 +204,20 @@ npm run compose:clean
 ### Docker Services
 
 #### 1. Fitness Tracker App (`fitness-app`)
+
 - **Port**: 5000
 - **Technology**: Node.js with Express
 - **Health Check**: Built-in endpoint monitoring
 
 #### 2. MongoDB Database (`mongodb`)
+
 - **Port**: 27017
 - **Version**: MongoDB 7.0
 - **Data Persistence**: Named volume `mongodb_data`
 - **Initialization**: Automatic database setup with sample data
 
 #### 3. MongoDB Express (`mongo-express`)
+
 - **Port**: 8081
 - **Purpose**: Web-based MongoDB administration
 - **Credentials**: admin/fittrack123
@@ -215,6 +225,7 @@ npm run compose:clean
 ### Docker Configuration Files
 
 #### Dockerfile
+
 ```dockerfile
 # Multi-stage build for production
 FROM node:18-alpine
@@ -229,6 +240,7 @@ CMD ["npm", "start"]
 ```
 
 #### docker-compose.yml
+
 - **Orchestrates**: Application, Database, Admin Interface
 - **Networks**: Custom bridge network for service communication
 - **Volumes**: Persistent data storage for MongoDB
@@ -265,6 +277,7 @@ For development with hot-reload:
 #### Common Issues:
 
 1. **Port already in use**:
+
    ```bash
    # Check what's using port 5000
    netstat -an | findstr :5000
@@ -273,6 +286,7 @@ For development with hot-reload:
    ```
 
 2. **Database connection issues**:
+
    ```bash
    # Check container logs
    docker logs fitness-tracker-mongodb
@@ -280,6 +294,7 @@ For development with hot-reload:
    ```
 
 3. **Clean slate restart**:
+
    ```bash
    # Remove all containers and volumes
    npm run compose:clean
@@ -295,11 +310,13 @@ For development with hot-reload:
 ### Production Docker Deployment
 
 1. **Build production image**:
+
    ```bash
    docker build -t fitness-tracker:production .
    ```
 
 2. **Run with production compose**:
+
    ```bash
    npm run docker:prod
    ```
@@ -356,19 +373,23 @@ fittrack-pro/
 ### API Endpoints
 
 #### Authentication
+
 - `POST /api/auth/register` - Register new user
 - `POST /api/auth/login` - User login
 - `POST /api/auth/logout` - User logout
 
 #### Workouts
+
 - `POST /api/auth/log-workout` - Log a new workout
 - `GET /api/auth/workouts/:email` - Get user workouts
 
 #### Metrics
+
 - `POST /api/auth/metrics` - Record health metrics
 - `GET /api/auth/metrics/:email` - Get user metrics
 
 #### Trainer Plans
+
 - `POST /api/auth/plans` - Create workout plan
 - `GET /api/auth/plans/:trainer` - Get trainer's plans
 - `PUT /api/auth/plans/:id` - Update plan
@@ -422,11 +443,13 @@ npm audit
 ### Heroku Deployment
 
 1. **Create a Heroku app**:
+
    ```bash
    heroku create your-app-name
    ```
 
 2. **Set environment variables**:
+
    ```bash
    heroku config:set MONGODB_URI=your-mongodb-connection-string
    heroku config:set NODE_ENV=production
@@ -440,6 +463,7 @@ npm audit
 ### Vercel Deployment
 
 1. **Install Vercel CLI**:
+
    ```bash
    npm install -g vercel
    ```
@@ -478,7 +502,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Pulkit Srivastava**
+**Pankaj sahani**
 
 ## 🙏 Acknowledgments
 
